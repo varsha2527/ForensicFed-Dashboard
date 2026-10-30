@@ -43,6 +43,8 @@ import {
 
 // @ts-ignore CSS side-effect imports may not have declarations in this project.
 import "./App.css";
+import LoginPage from "./LoginPage";
+
 
 const trafficData = [
   { time: "00:00", benign: 180, threats: 18 },
@@ -83,6 +85,7 @@ const navGroups = [
 
 function App() {
   const [activePage, setActivePage] = useState("Overview");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [showAlerts, setShowAlerts] = useState(false);
@@ -93,6 +96,13 @@ function App() {
       .toLowerCase()
       .includes(search.toLowerCase())
   );
+  if (!isAuthenticated) {
+  return (
+    <LoginPage
+      onLogin={() => setIsAuthenticated(true)}
+    />
+  );
+}
 
   return (
     <div className="app-shell">
