@@ -6,13 +6,13 @@ const API_BASE_URL = (
 export const isApiConfigured = API_BASE_URL.length > 0;
 
 export class ApiError extends Error {
-  constructor(
-    message: string,
-    public status?: number
-  ) {
-    super(message);
-    this.name = "ApiError";
-  }
+  public status?: number;
+
+constructor(message: string, status?: number) {
+  super(message);
+  this.name = "ApiError";
+  this.status = status;
+}
 }
 
 export async function apiRequest<T>(

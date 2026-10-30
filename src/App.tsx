@@ -7,10 +7,8 @@ import {
   ArrowUpRight,
   Brain,
   Bell,
-  CheckCircle2,
   ChevronDown,
   CircleHelp,
-  CircleDot,
   Clock3,
   Cpu,
   Database,
@@ -21,10 +19,8 @@ import {
   Menu,
   Network,
   Play,
-  RefreshCw,
   Search,
   Server,
-  Send,
   Settings,
   Shield,
   ShieldAlert,
@@ -32,7 +28,6 @@ import {
   SlidersHorizontal,
   Sparkles,
   Target,
-  Timer,
   Users,
   X,
 } from "lucide-react";
@@ -311,7 +306,7 @@ function App() {
                 </div>
                 <div className="connector-lines"><span /><span /><span /></div>
                 <div className="client-nodes">
-                  {["Client 01", "Client 02", "Client 03"].map((client, index) => (
+                  {["Client 01", "Client 02", "Client 03"].map((client) => (
                     <div className="client-node" key={client}>
                       <div className="client-icon"><Cpu size={18} /></div>
                       <strong>{client}</strong>
